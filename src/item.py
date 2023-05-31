@@ -1,6 +1,5 @@
 import csv
 
-
 class Item:
     """
     Класс для представления товара в магазине.
@@ -20,6 +19,9 @@ class Item:
         self.price = price
         self.quantity = quantity
         self.all_items.append(self)
+
+    def __add__(self, other):
+        return Item(self.name + " и " + other.name, self.price + other.price, self.quantity + other.quantity)
 
     @property
     def name(self):
@@ -69,31 +71,6 @@ class Item:
     @staticmethod
     def string_to_number(string):
         return float(string)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # class Item:     Дз_3
@@ -247,3 +224,5 @@ class Item:
 #     @classmethod
 #     def get_all_items(cls):
 #         return cls.all_items
+class Phone:
+    pass
