@@ -18,29 +18,29 @@ class Phone(Item):
         super().__init__(name, price, quantity)
         self.number_of_sim = number_of_sim
 
-    def add(self, other):
-        """
-        Переопределение оператора сложения для класса Phone.
-
-        :param other: Другой объект класса Phone или Item.
-        :return: Суммарное количество товара в магазине.
-        """
-        if isinstance(other, Phone) or isinstance(other, Item):
-            return self.quantity + other.quantity
-        else:
-            raise TypeError("Нельзя сложить Phone с объектом другого класса")
-
-    def radd(self, other):
-        """
-        Переопределение оператора сложения для класса Phone.
-
-        :param other: Другой объект класса Phone или Item.
-        :return: Суммарное количество товара в магазине.
-        """
-        if isinstance(other, Phone) or isinstance(other, Item):
-            return self.quantity + other.quantity
-        else:
-            raise TypeError("Нельзя сложить Phone с объектом другого класса")
+    # def add(self, other):
+    #     """
+    #     Переопределение оператора сложения для класса Phone.
+    #
+    #     :param other: Другой объект класса Phone или Item.
+    #     :return: Суммарное количество товара в магазине.
+    #     """
+    #     if isinstance(other, Phone) or isinstance(other, Item):
+    #         return self.quantity + other.quantity
+    #     else:
+    #         raise TypeError("Нельзя сложить Phone с объектом другого класса")
+    #
+    # def radd(self, other):
+    #     """
+    #     Переопределение оператора сложения для класса Phone.
+    #
+    #     :param other: Другой объект класса Phone или Item.
+    #     :return: Суммарное количество товара в магазине.
+    #     """
+    #     if isinstance(other, Phone) or isinstance(other, Item):
+    #         return self.quantity + other.quantity
+    #     else:
+    #         raise TypeError("Нельзя сложить Phone с объектом другого класса")
 
     def __str__(self):
         """
