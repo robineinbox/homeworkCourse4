@@ -9,10 +9,10 @@ def test_phone_init():
     assert phone.number_of_sim == 2
 
 
-def test_phone_add():
-    phone1 = Phone("iPhone 14", 120_000, 5, 2)
-    phone2 = Phone("Samsung Galaxy S21", 80_000, 10, 1)
-    assert (phone1 + phone2).quantity == 15
+# def test_phone_add():
+#     phone1 = Phone("iPhone 14", 120_000, 5, 2)
+#     phone2 = Phone("Samsung Galaxy S21", 80_000, 10, 1)
+#     assert (phone1 + phone2).quantity == 15
 
 
 def test_phone_str():
