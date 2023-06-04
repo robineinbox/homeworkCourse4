@@ -1,4 +1,22 @@
 """Здесь надо написать тесты с использованием pytest для модуля item."""
+from src.item import Item
+
+def test_item_creation():
+    item = Item('Book', 10.99, 5)
+    assert item.name == 'Book'
+    assert item.price == 10.99
+    assert item.quantity == 5
+
+def test_item_total_price():
+    item = Item('Book', 10.99, 5)
+    assert item.calculate_total_price() == 54.95
+
+def test_item_discount():
+    Item.pay_rate = 0.9
+    item = Item('Book', 10.99, 5)
+    item.apply_discount()
+    assert item.price == 9.891
+
 
 
 
