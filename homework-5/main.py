@@ -18,3 +18,4 @@ if __name__ == '__main__':
     except AttributeError as e:
         assert str(e) == "can't set attribute"
         # AttributeError: property 'language' of 'KeyBoard' object has no setter
+

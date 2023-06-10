@@ -1,13 +1,15 @@
-﻿# Класс-миксин для хранения и изменения раскладки клавиатуры
+﻿from src.item import Item
+
+
 class LanguageMixin:
-    def __init__(self):
-        self.language = 'EN'
+    """
+    Миксин для изменения языка клавиатуры.
+    """
 
-    def change_lang(self):
+    def change_lang(self) -> 'Keyboard':
         """
-        Меняет раскладку клавиатуры на следующую.
-
-        :return: Текущий экземпляр класса Keyboard.
+        Метод для изменения языка клавиатуры.
+        :return: Экземпляр класса Keyboard с измененным языком.
         """
         if self.language == 'EN':
             self.language = 'RU'
@@ -15,21 +17,92 @@ class LanguageMixin:
             self.language = 'EN'
         return self
 
-    @property
-    def language(self):
-        return self._language
 
-    @language.setter
-    def language(self, value):
-        """
-        Устанавливает язык раскладки.
 
-        :param value: Значение языка раскладки.
-        :return: None
-        """
-        if value not in ('EN', 'RU'):
-            raise ValueError(f"Неподдерживаемый язык: {value}")
-        self._language = value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# class Keyboard(LanguageMixin, Item):
+#     """
+#     Класс для представления товара "клавиатура" с возможностью изменения языка.
+#     """
+#
+#     def __init__(self, name: str, price: float, quantity: int) -> None:
+#         super().__init__(name, price, quantity)
+#         self.language = 'EN'
+#
+#     def __str__(self) -> str:
+#         return self.name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # Класс-миксин для хранения и изменения раскладки клавиатуры
+# class LanguageMixin:
+#     def __init__(self):
+#         self.language = 'EN'
+#
+#     def change_lang(self):
+#         """
+#         Меняет раскладку клавиатуры на следующую.
+#
+#         :return: Текущий экземпляр класса Keyboard.
+#         """
+#         if self.language == 'EN':
+#             self.language = 'RU'
+#         else:
+#             self.language = 'EN'
+#         return self
+#
+#     @property
+#     def language(self):
+#         return self._language
+#
+#     @language.setter
+#     def language(self, value):
+#         """
+#         Устанавливает язык раскладки.
+#
+#         :param value: Значение языка раскладки.
+#         :return: None
+#         """
+#         if value not in ('EN', 'RU'):
+#             raise ValueError(f"Неподдерживаемый язык: {value}")
+#         self._language = value
 
 
 
@@ -71,3 +144,5 @@ class LanguageMixin:
 #         if language not in ('EN', 'RU'):
 #             raise ValueError(f"Неподдерживаемый язык: {language}")
 #         self.language = language
+class KeyboardMixin:
+    pass
